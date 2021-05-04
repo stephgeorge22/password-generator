@@ -1,21 +1,41 @@
 // Assignment code here
 
+
+
 //when user clicks the button, they are presented with a series of prompts
 var generatePassword = function() {
   // password length prompt
-  var generate = parseInt (window.prompt('Choose a password length between 8 to 128 characters.'));
+  var length = parseInt (window.prompt('Choose a password length between 8 to 128 characters.'));
 
   // ensure that user selects integer between 8 and 128 
-  if (generate < 8 || generate > 128 || isNaN(generate)) {
+  if (length < 8 || length > 128 || isNaN(length)) {
       window.alert("Choose a length between 8 and 128 characters.");
       return generatePassword();
 
     } else {
-    confirmLowercase = confirm("Should your password include lowercase letters?");
-    confirmUppercase = confirm("Should your password include uppercase letters?");
-    confirmNumber = confirm("Should your password include numeric values?");
-    confirmSpecialCharacter = confirm("Should your password include special characters?");
+    Lowercase = confirm("Should your password include lowercase letters?");
+    Uppercase = confirm("Should your password include uppercase letters?");
+    Number = confirm("Should your password include numeric values?");
+    SpecialCharacter = confirm("Should your password include special characters?");
   }
+
+  // functions to generate random options utilizing Charcode
+  function randomLowercase(){
+    return String.fromCharCode(Math.floor(Math.random() *26) + 41);
+  }
+
+  function randomUppercase(){
+    return String.fromCharCode(Math.floor(Math.random() *26) + 61);
+  }
+
+  function randomNumber(){
+    return String.fromCharCode(Math.floor(Math.random() *10) + 30);
+  }
+
+  function randomSpecialcharacter(){
+    return String.fromCharCode(Math.floor(Math.random() *15) + 21);
+  }
+
 };
 
 // Get references to the #generate element
