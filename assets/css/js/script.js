@@ -3,15 +3,18 @@
 //when user clicks the button, they are presented with a series of prompts
 var generatePassword = function() {
   // password length prompt
-  var generate = window.prompt('Choose a password length between 8 to 128 characters.');
+  var generate = parseInt (window.prompt('Choose a password length between 8 to 128 characters.'));
 
   // ensure that user selects integer between 8 and 128 
-  if (generate < 8 || generate > 128 || generate !== Number.isInteger) {
+  if (generate < 8 || generate > 128 || isNaN(generate)) {
       window.alert("Choose a length between 8 and 128 characters.");
       return generatePassword();
 
     } else {
-    confirmNumber = confirm("Do you want to include numbers?");
+    confirmLowercase = confirm("Should your password include lowercase letters?");
+    confirmUppercase = confirm("Should your password include uppercase letters?");
+    confirmNumber = confirm("Should your password include numeric values?");
+    confirmSpecialCharacter = confirm("Should your password include special characters?");
   }
 };
 
