@@ -2,8 +2,15 @@
 
 //array to hold prompt answers
 var picked =[];
+
 //array to hold password
 var result = [];
+
+// assigning value to each array element to call in for loop
+var lowerResult = picked[0];
+var upperResult = picked[1];
+var numberResult = picked[2];
+var specialCharacterResult = picked[3];
 
 //when user clicks the button, they are presented with a series of prompts
  var generatePassword = function() {
@@ -29,39 +36,62 @@ var result = [];
     picked.push(pickSpecialCharacter);
 
     console.log(picked);
+
+  // ensure user chooses at least one character type
+  if (picked[0] === false && picked[1] === false && picked[2] === false && picked[3] === false) {
+    window.alert("You must select at least one character type")
+    return generatePassword();
+  }
+
   
   // create for loop with all 4 functions for array 
+  // functions to generate random options utilizing Charcode (https://net-comber.com/charset.html)
 
-  // only run functions that array has stored 
-
-  
+  // only run functions that array has stored as true
 
   for (i=0; i<length; i++ ) {
-    lowerCase = String.fromCharCode(Math.floor(Math.random() *26) + 97);
 
-    result.push(lowerCase);
+  }
+
+  for (i=0; i<length; i++ ) {
+
+    if (picked[0] === true) {
+      // function for lowercase
+      lowerCase = String.fromCharCode(Math.floor(Math.random() *26) + 97);
+      result.push(lowerCase);
+    }
+
+    console.log(result);
+
+    if (picked[1] === true) {
+      //function for uppercase
+      upperCase = String.fromCharCode(Math.floor(Math.random() *26) + 65);
+      result.push(upperCase);
+    }
+    
+    console.log(result);
+
+    if (picked[2] === true) {
+      //function for numbers
+      number = String.fromCharCode(Math.floor(Math.random() *10) + 48);
+      result.push(number);
+    }
+    console.log(result);
+
+    if (picked[3] === true) {
+      //function for special characters
+      specialCharacters = String.fromCharCode(Math.floor(Math.random() *15) + 33);
+      result.push(specialCharacters);
+    }
+
   }
   return result.join('');
+  
 
 
 };
 
- // functions to generate random options utilizing Charcode (https://net-comber.com/charset.html)
- function randomLowercase(){
-  return String.fromCharCode(Math.floor(Math.random() *26) + 97);
-}
-
-function randomUppercase(){
-  return String.fromCharCode(Math.floor(Math.random() *26) + 61);
-}
-
-function randomNumber(){
-  return String.fromCharCode(Math.floor(Math.random() *10) + 30);
-}
-
-function randomSpecialcharacter(){
-  return String.fromCharCode(Math.floor(Math.random() *15) + 21);
-}
+ 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
