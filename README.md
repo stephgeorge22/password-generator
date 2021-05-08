@@ -29,7 +29,7 @@
 ### THEN the password is either displayed in an alert or written to the page
 
 ## Screenshot:
-<img src="./assets/images/readmeJPG" alt="website screenshot" />
+<img src="./assets/images/readme.JPG" alt="website screenshot" />
 
 ## Link to Deployed Application:
 ### https://stephgeorge22.github.io/password-generator/
