@@ -17,6 +17,8 @@ In a world full of cyber threats, having a secure password is vital. This passwo
 Deployed Link: https://stephgeorge22.github.io/password-generator/
 
 ## Usage
+Once the "Generate Password" button is clicked, the application will then prompt for the password length, whether or not it should include lowercase letters, uppercase letters, numerical values and special characters. Once the prompts are complete, a secure password will be generated. 
+
 <img src="./assets/images/readme.JPG" alt="website screenshot" />
 
 ## Story
